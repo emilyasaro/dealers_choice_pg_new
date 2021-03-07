@@ -1,9 +1,19 @@
 import axios from 'axios';
-// import html from 'html-template-tag';
 
+const customerList = document.querySelector('#customer-list');
 const monthList = document.querySelector('#month-list');
-const recipeList = document.querySelector('#recipe-list');
+const orderList = document.querySelector('#order-list');
 
+
+// const renderCustomers = (customers) => {
+//   const htmlResult = customers.map( customer => `
+// <li>
+//   <a href='#${customer.id}'>
+//     ${customer.name}
+//   </a>
+// </li>`).join('');
+// customerList.innerHTML = htmlResult;
+// }
 
 const renderMonths = (months) => {
   const htmlResult = months.map( month => `
@@ -15,27 +25,31 @@ const renderMonths = (months) => {
 monthList.innerHTML = htmlResult;
 }
 
-const renderRecipes = (recipes) => {
-  const htmlResult = recipes.map( recipe => `
+const renderOrders = (orders) => {
+  const htmlResult = orders.map( order => `
 <li>
-  <a href='#${recipe.id}'>
-    ${recipe.name}
+  <a href='#${order.id}'>
+    ${order.name}
   </a>
 </li>`).join('');
-recipeList.innerHTML = htmlResult;
+orderList.innerHTML = htmlResult;
 }
 
 const init = async() => {
   try {
     const months = (await axios.get('/api/months')).data;
-    const recipes = (await axios.get('/api/recipes')).data;
+    // const customers = (await axios.get('/api/cutomers')).data;
+    // const orders = (await axios.get('/api/orders')).data;
+
     renderMonths(months);
-    renderRecipes(recipes);
+    // renderCustomers(customers);
+    // renderOrders(orders);
   } catch (error) {
     console.log(error)
   }
 }
 
-
-
+// window.addEventListener('hashchange', () => {
+//   console.log(window.location.hash.slice(1));
+// })
 init()

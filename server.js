@@ -22,7 +22,6 @@ app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/inde
 app.use('/api', require('./routes/index'));
 
 
-
 const port = process.env.PORT || 3000;
 
 const init = async () => {

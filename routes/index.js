@@ -1,13 +1,12 @@
 const router = require('express').Router();
-// const { client } = require('../db/seed.js');
-const recipesRouter = require('./recipes');
-const monthRouter = require('./months')
+const monthsRouter = require('./months');
+const customerRouter = require('./customers')
 
-router.use('/recipes', recipesRouter);
-router.use('/months', monthRouter);
+router.use('/months', monthsRouter);
+router.use('/customers', customerRouter);
 
 
 module.exports = router;
 
 
-//sale belongs to user >> recipe belongs to month
+
