@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use(express.static(path.join(__dirname, '/dist')));
+app.use(express.static(path.join(__dirname, '/dist'))); //start script relies on this
 
 // sendFile sends the /public/index.html file to the client
 app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/index.html')));
@@ -22,7 +22,7 @@ app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/public/inde
 app.use('/api', require('./routes/index'));
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 const init = async () => {
   try {
@@ -37,4 +37,4 @@ const init = async () => {
 }
 init();
 
-// module.exports = app;
+
