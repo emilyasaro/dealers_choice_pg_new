@@ -10,8 +10,12 @@ Model Kettlebell Creamery order site
 
 Current Issues:
 1. Main page is only displaying the list of months. Returning a 404 when I try to render the customers and order data.
+ NOTE: misspelled "customers"
 2. SQL Queries... I realllllly miss Sequelize and being able to use eager loading. Felt really stopped by having to figure out what kind of JOIN to use in routes/customers.js to display the Order WITH the name of the person who ordered and what month the order was placed.
 
+checking entry point
+output
+mode development in config better than in scripts
 
 
 Past issues:

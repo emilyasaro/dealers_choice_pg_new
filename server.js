@@ -29,7 +29,7 @@ const init = async () => {
   await client.connect();
   await syncAndSeed();
 
-  app.listen(port, () => {`App listening on port ${port}.`});
+  app.listen(port, () => {console.log(`App listening on port ${port}.`)});
   }
   catch(err) {
     console.log('there was an error starting up!', err);

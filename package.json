@@ -7,8 +7,8 @@
   "description": "",
   "main": "seed.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "build-dev": "npm run build --mode=development --watch",
+    "build": "webpack --watch",
+    "build-dev": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "npm run build-dev & nodemon server.js --ignore /src --ignore /dist",
     "start": "node server.js"

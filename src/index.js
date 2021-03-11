@@ -1,14 +1,4 @@
-// import axios from 'axios';
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import Main from './Main'
-
-
-// ReactDOM.render(
-//   <Main />,
-//   document.getElementById('app')
-// )
-
+import axios from 'axios'
 
 const customerList = document.querySelector('#customer-list');
 const monthList = document.querySelector('#month-list');
@@ -50,12 +40,12 @@ orderList.innerHTML = htmlResult;
 const init = async() => {
   try {
     const months = (await axios.get('/api/months')).data;
-    // const customers = (await axios.get('/api/cutomers')).data;
-    // const orders = (await axios.get('/api/orders')).data;
+    const customers = (await axios.get('/api/customers')).data;
+    const orders = (await axios.get('/api/orders')).data;
 
     renderMonths(months);
-    // renderCustomers(customers);
-    // renderOrders(orders);
+    renderCustomers(customers);
+    renderOrders(orders);
   } catch (error) {
     console.log(error)
   }
